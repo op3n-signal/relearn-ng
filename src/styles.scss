@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+$fontColor: rgb(43, 43, 43);
+$backgroundColor: white;
+$above-1280: block;
+$below-1280: none;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color: $fontColor;
+    background: $backgroundColor;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: $fontColor;
+}
+
+li {
+    list-style-type: none;
+}
+
+//Resuable css classes
+
+.flex-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.only-below-1280 {
+    display: none;
+}
+
+.only-above-1280 {
+    display: block;
+}
+
+//media queries
+@media (max-width: 1280px) {
+    .only-below-1280 {
+        display: block;
+    }
+    
+    .only-above-1280 {
+        display: none;
+    }
+}
+
