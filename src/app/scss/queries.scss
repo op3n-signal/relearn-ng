@@ -1,0 +1,12 @@
+//media queries
+
+
+@media (max-width: 1280px) {
+    .display-below-1280 {
+        display: block;
+    }
+    
+    .display-above-1280 {
+        display: none;
+    }
+}

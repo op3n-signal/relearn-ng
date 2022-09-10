@@ -1,0 +1,86 @@
+//Resuable css classes
+/* abstract */
+
+.align-center-if-row {
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.hide {
+    display: none;
+}
+
+.f-row {
+    display: flex;
+}
+
+.f-col {
+    @extend .f-row;
+    flex-direction: column;
+}
+
+.flex-start {
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.flex-end {
+    align-content: flex-end;
+}
+
+.space-left-right-40 {
+    margin: 0 40px;
+}
+
+.space-right-10 {
+    margin-right: 10px;
+}
+
+.space-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.bottom-shadow {
+    @include boxshadow(-1px, -5px, $boxshadowColor);
+}
+
+.top-shadow {
+    @include boxshadow(1px, 5px, $boxshadowColor);
+}
+
+.position-ab {
+    @include customPostion(absolute, 0, unset, unset, 0);
+}
+
+.position-ab-btm {
+    @include customPostion(absolute, unset, unset, 0, 0);
+}
+
+
+/* query classes */
+
+.display-below-1280 {
+    display: none;
+}
+
+.display-above-1280 {
+    display: block;
+}
+
+/* More Specific */
+
+.nav-pane-color {
+    background: $navPaneColor;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    @include flex(1);
+}
+
+
+.list-item {
+    margin: auto;
+}

@@ -1,0 +1,16 @@
+@mixin flex($param1) {
+    flex: $param1;
+}
+
+
+@mixin boxshadow($y, $x, $color) {
+    box-shadow: $y $x 5px 5px $color;
+}
+
+@mixin customPostion($positionType, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: $positionType;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
