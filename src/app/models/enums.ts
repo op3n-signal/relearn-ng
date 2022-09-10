@@ -1,4 +1,4 @@
-enum RequestType {
-    get,
-    post
+enum AccessType {
+    Login,
+    Register
 }

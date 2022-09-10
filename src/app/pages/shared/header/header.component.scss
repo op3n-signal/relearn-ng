@@ -1,6 +1,6 @@
-.space-right-side {
-    margin-right: 20px;
-}
+/* general */
+
+/* button that toggles */
 
 .line {
     height: 2px;
@@ -9,6 +9,31 @@
     margin-top: 2px;
 }
 
-.remove-me {
-    display: none;
+.line-1 {
+    opacity: 0.4;
+    transform: rotate(-60deg);
+}
+.line-2 {
+    opacity: 0;
+}
+.line-3 {
+    transform: rotate(60deg);
+}
+
+
+/* nav pane from burger */
+.burger-nav-pane {
+    width: 300px;
+    height: 100vh;
+}
+
+.list {
+    text-align: center;
+    margin: auto;
+}
+
+/* desktop nav */
+.desktop-nav {
+    width: 100vw;
+    padding-top: 5px;
 }
