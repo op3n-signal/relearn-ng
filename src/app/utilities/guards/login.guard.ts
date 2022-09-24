@@ -8,10 +8,10 @@ export class LoginGuard implements CanActivate {
     //TODO: hard-coded login value is set for now
     isLoggedIn: boolean = true;
 
-    constructor(private sRequest: ClientService, private router: Router) { }
+    constructor(private client: ClientService, private router: Router) { }
 
     canActivate() {
-        if(!this.sRequest.checkToken()) this.router.navigate(['/account/login']);
+        if(!this.client.checkToken()) this.router.navigate(['/account/login']);
 
         return true;
     }

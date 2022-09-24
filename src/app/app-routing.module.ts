@@ -7,7 +7,8 @@ import { IndexComponent } from './pages/index/index.component';
 const routes: Routes = [
   { path: 'account', loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule) },
   { path: '', component: IndexComponent, canActivate: [LoginGuard] },
-  { path: '**', component: ErrorComponent, pathMatch: 'full' }
+  { path: 'error', component: ErrorComponent },
+  { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
 
 @NgModule({

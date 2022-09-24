@@ -9,7 +9,13 @@ import { ErrorComponent } from './pages/error/error.component';
 import { IndexComponent } from './pages/index/index.component';
 import { HeaderComponent } from './pages/shared/header/header.component';
 import { FooterComponent } from './pages/shared/footer/footer.component';
-import { OpenAreaDirective } from './utilities/directives/open-area.directive';
+import { NavComponent } from './pages/shared/header/nav/nav.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return sessionStorage.getItem("jwt");
+}
+
 
 @NgModule({
   declarations: [
@@ -18,12 +24,19 @@ import { OpenAreaDirective } from './utilities/directives/open-area.directive';
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    OpenAreaDirective
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44348", ],
+        disallowedRoutes: []
+      }
+    })
   ],
   providers: [
     LoginGuard

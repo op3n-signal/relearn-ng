@@ -2,52 +2,31 @@
     <div class="row">
         <div class="col-xl">
             <header class="bottom-shadow">
-                <div class="f-row align-center-if-row space-left-right-40">
-
+                <div class="f-row space-left-right-40">
                     <div class="logo">
-                        <div class="button">Logo</div>
+                        <span routerLink="" class="button point">Trendster</span>
                     </div>
 
-                    <div class="f-row align-center-if-row">
-                        <div class="f-row space-right-10 ">
-                            <div class="button" routerLink="/account/login">Login</div>
-                        </div>    
-                        <!-- burger btn -->
-                        <div class="display-below-1280 btn-toggle f-row button" classToAlter="burger-nav-pane">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
+                    <div class="space-right-20 space-top-5">
+                        <div class="f-row" *ngIf="!isLoggedIn">
+                            <div class="button space-right-10 point" routerLink="/account/login">Login</div>
+                            <div class="button point" routerLink="/account/register">Register</div>
                         </div>
-                        <!-- burger btn end -->
-
-                                            
+                        <div *ngIf="isLoggedIn" style="text-align:center;">
+                            <div class="point" (click)="showLinks = !showLinks"><span>User</span><span
+                                    class="caret"></span></div>
+                            <div *ngIf="showLinks" class="profile-tab-width">
+                                <ul>
+                                    <li class="link" *ngFor="let i of links">{{ i }}</li>
+                                    <li class="link" (click)="signout()">Logout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-top-8">
+                        <app-nav></app-nav>         
                     </div>
 
-                    <!-- nav pane from burger -->
-                    <div class="burger-nav-pane hide nav-pane-color position-ab display-below-1280">
-                        <ul class="list">
-                            <li class="list-item">Lorem ipsum</li>
-                            <li class="list-item">Lorem ipsum</li>
-                            <li class="list-item">Lorem ipsum</li>
-                            <li class="list-item">Lorem ipsum</li>
-                            <li class="list-item">Lorem ipsum</li>
-                            <li class="list-item">Lorem ipsum</li>
-                        </ul>
-                    </div>
-                    <!-- nav pane from burger end -->
-
-                    <!-- nav desktop -->
-                    <div class="display-above-1280 desktop-nav position-ab-btm top-shadow">
-                        <ul class="f-row">
-                            <li class="list-item">Analytics</li>
-                            <li class="list-item">Analytics</li>
-                            <li class="list-item">Analytics</li>
-                            <li class="list-item">Analytics</li>
-                            <li class="list-item">Analytics</li>
-                            <li class="list-item">Analytics</li>
-                        </ul>
-                    </div>
-                    <!-- nav desktop end -->
                 </div>
             </header>
         </div>
