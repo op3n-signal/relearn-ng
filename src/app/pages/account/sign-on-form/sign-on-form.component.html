@@ -1,0 +1,28 @@
+<form class="form f-col" #f="ngForm" (submit)="authenticateUser(f)">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" #username="ngModel"
+            [(ngModel)]="user.username" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" #password="ngModel" [(ngModel)]="user.password"
+            required>
+    </div>
+
+    <div *ngIf="context === 'SignUp'">
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control" #confirm_password="ngModel"
+                [(ngModel)]="user.confirm_password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" #email="ngModel" [(ngModel)]="user.email" required>
+        </div>        
+    </div>
+
+    <input type="submit" name="submit" class="form-control" value="{{ context }}" [disabled]="f.invalid" />
+</form>

@@ -1,0 +1,29 @@
+ <!-- burger btn -->
+ <div class="btn-toggle display-below-1280 f-row point" (click)="toggleNav()">
+    <div class="burger-btn" *ngIf="!isNavOpen; else openBurger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>                                
+    </div>
+    <ng-template #openBurger>
+        <div class="burger-btn">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>                     
+        </div>
+    </ng-template>
+</div>
+
+<!-- side-menu-->
+<div class="burger-nav-pane nav-pane-color position-ab" [ngClass]="{hide: !isNavOpen}">
+    <ul (click)="navigate($event)" class="list">
+        <li class="link list-item" *ngFor="let i of links">{{ i }}</li>
+    </ul>
+</div>
+
+<!-- nav desktop -->
+<div class="display-above-1280 desktop-nav position-ab-btm top-shadow">
+    <ul class="f-row">
+        <li class="link list-item" *ngFor="let i of links">{{ i }}</li>
+    </ul>
+</div>
